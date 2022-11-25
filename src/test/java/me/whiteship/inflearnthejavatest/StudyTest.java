@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StudyTest {
@@ -15,6 +16,7 @@ class StudyTest {
 
         assertAll(
                 ()->assertNotNull(study),
+                ()->assertThat(3).isEqualTo(4),
                 ()->assertTrue(study.getLimit()>0,()->"limit 은 0을 넘어야한다."),
                 ()->assertEquals(StudyStatus.DRAFT, study.getStatus(),
                         ()->"스터디를 처음 만들면 상태값이 DRAFT 여야한다.")
